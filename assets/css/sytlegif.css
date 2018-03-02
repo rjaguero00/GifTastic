@@ -1,3 +1,15 @@
-.container {
-	text-align: center;
+body {
+	background-image: url(../images/ep_naturalblack.png);
+}
+
+.container{
+	color: white;
+}
+
+#add-actor{
+	color: red;
+}
+
+.btn-danger {
+	margin: 3px;
 }
