@@ -1,5 +1,5 @@
 //Array of strings stored in var actors
-var actors = ["Danny McBride", "Craig Robinson", "Seth Rogen", "James Franco", "Jonah Hill", "Leonardo Dicaprio", "Tom Hardy"];
+var actors = ["Danny McBride", "Craig Robinson", "Seth Rogen", "James Franco", "Jonah Hill", "Leonardo Dicaprio", "Tom Hardy", "Heath Ledger", "Matthew McConaughey", "Woody Harrelson", "John Robinson", "Mike Myers", "Walton Goggins"];
 
 //
 function searchAPI() {
@@ -15,14 +15,18 @@ function searchAPI() {
     $("#actor-view").empty();
 
     for (var i = 0; i < response.data.length; i++) {
-    	// console.log(response.data[i]);
+    	console.log(response.data[i]);
+    	var div = $("<div class='image-container col-md-3'>");
+    	var rating = $("<div class='rating'>").text('Rating: ' + response.data[i].rating);
     	var image = $("<img>");
-    	image.attr("src", response.data[i].images.fixed_height_small_still.url);
+    	image.attr("src", response.data[i].images.original_still.url);
     	image.attr("data-state", "still");
-    	image.attr("data-animate", response.data[i].images.fixed_height_small.url);
-    	image.attr("data-still", response.data[i].images.fixed_height_small_still.url);
+    	image.attr("data-animate", response.data[i].images.original.url);
+    	image.attr("data-still", response.data[i].images.original_still.url);
     	image.addClass("gif");
-    	$('#actor-view').append(image);
+    	div.append(image);
+    	div.append(rating);
+    	$('#actor-view').append(div);
     }
 
     });	
