@@ -16,7 +16,7 @@ function searchAPI() {
 
     for (var i = 0; i < response.data.length; i++) {
     	console.log(response.data[i]);
-    	var div = $("<div class='image-container col-md-3'>");
+    	var div = $("<div class='image-container col-md-6'>");
     	var rating = $("<div class='rating'>").text('Rating: ' + response.data[i].rating);
     	var image = $("<img>");
     	image.attr("src", response.data[i].images.original_still.url);
@@ -61,6 +61,7 @@ function displayButtons() {
         $(this).attr("data-state", "still");
       }
     };
+
  
 $("#add-actor").on("click", function (event) {
 	event.preventDefault();
